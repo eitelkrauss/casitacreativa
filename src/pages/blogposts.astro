@@ -1,0 +1,14 @@
+---
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+// Data Fetching: List all Markdown posts in the repo.
+
+let allPosts = await Astro.glob('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+---
+
+<DefaultLayout>
+    <section aria-label="Blog post list" class="m-16 flex">
+        {allPosts.map((p) => <BlogPostPreview post={p} />)}
+    </section>
+</DefaultLayout>

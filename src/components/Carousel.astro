@@ -1,0 +1,37 @@
+---
+---
+
+<div id="home-carousel" class="w-screen sm:w-full max-w-[600px] h-72 mx-auto my-12 overflow-hidden relative bg-gray-800">
+    <div id="first-slide" class="absolute inset-0 w-full h-full bg-pink-500 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-0 slide">
+    </div>
+    <div class="absolute inset-0 w-full h-full bg-purple-500 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+    </div>
+    <div class="absolute inset-0 w-full h-full bg-red-500 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+    </div>
+</div>
+
+<script>
+    // let counter = 0;
+    const interval = setInterval(() => {
+        nextSlide();
+    }, 3000)
+
+function nextSlide(){
+    let activeSlide = document.querySelector('.slide.translate-x-0');
+    activeSlide.classList.remove('translate-x-0');
+    activeSlide.classList.add('translate-x-full');
+    
+    let nextSlide = activeSlide.nextElementSibling;
+    if(!nextSlide){
+        const firstSlide = document.querySelector('#first-slide') as HTMLElement;
+        firstSlide.classList.remove('translate-x-full');
+        firstSlide.classList.add('translate-x-0');
+    } else {
+        nextSlide.classList.remove('translate-x-full');
+        nextSlide.classList.add('translate-x-0');
+    }
+}
+
+
+
+</script>

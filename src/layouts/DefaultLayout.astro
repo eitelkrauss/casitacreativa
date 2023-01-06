@@ -1,0 +1,23 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BlogHeader from '../components/BlogHeader.astro';
+import Nav from '../components/Nav.astro';
+
+---
+
+<html lang={'es' || 'en'}>
+	<head>
+		<BaseHead title="Casita Creativa" description="Casita Creativa" permalink="https://casitacreativa.org" />
+	</head>
+
+	<body style="background-color: gray;">
+		<div class="sm:w-3/4 mx-auto bg-blue-100">
+			<BlogHeader />
+            <Nav />
+			<slot></slot>
+		</div>
+		<footer>
+			<a href="/admin">Admin Dashboard 🔐</a>
+		</footer>
+	</body>
+</html>
