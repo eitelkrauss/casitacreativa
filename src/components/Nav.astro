@@ -3,11 +3,27 @@
 ---
 
 <nav>
-    <ul class="flex justify-around">
-        <a href="/"><li class="hover:bg-sky-200 inline-block inline-flex p-3">Home</li></a>
-        <a href="/blogposts"><li class="hover:bg-sky-200 inline-block inline-flex p-3">Posts</li></a>
-        <li class="hover:bg-sky-200 inline-block inline-flex p-3">About Us</li>
-        <li class="hover:bg-sky-200 inline-block inline-flex p-3">Visión</li>
-        <li class="hover:bg-sky-200 inline-block inline-flex p-3">Contacto</li>
+    <svg
+    xmlns="<http://www.w3.org/2000/svg>"
+    id="menu-button"
+    class="h-6 w-6 m-3 cursor-pointer md:hidden block"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    >
+        <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"
+        />
+    </svg>
+    <ul class="hidden md:flex md:justify-around">
+        <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a class="p-3 w-full h-full" href="/">Home</a></li>
+        <!-- <a class="w-full h-full" href="/blogposts"><li class="hover:bg-sky-100 inline-block inline-flex grow text-center">Posts</li>p-3 </a> -->
+        <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a class="p-3 w-full h-full" href="/blogposts">Galeria</a></li>
+        <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a href="/about" class="p-3 w-full h-full">Quienes Somos</a></li>
+        <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a href="/voluntariado" class="p-3 w-full h-full">Voluntariado</a></li>
+        <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a href="#" class="p-3 w-full h-full">Contactanos</a></li>
     </ul>
 </nav>

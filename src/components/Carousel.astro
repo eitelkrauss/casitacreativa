@@ -1,7 +1,7 @@
 ---
 ---
 
-<div id="home-carousel" class="w-screen sm:w-full max-w-[600px] h-72 mx-auto my-12 overflow-hidden relative bg-gray-800">
+<div id="home-carousel" class="w-screen sm:w-full max-w-[800px] h-72 mx-auto overflow-hidden relative bg-gray-800">
     <div id="first-slide" class="absolute inset-0 w-full h-full bg-pink-500 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-0 slide">
     </div>
     <div class="absolute inset-0 w-full h-full bg-purple-500 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
@@ -11,8 +11,7 @@
 </div>
 
 <script>
-    // let counter = 0;
-    const interval = setInterval(() => {
+    setInterval(() => {
         nextSlide();
     }, 3000)
 
