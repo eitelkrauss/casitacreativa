@@ -1,8 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/BlogHeader.astro';
-import Nav from '../components/Nav.astro';
-
 ---
 
 <html lang={'es' || 'en'}>
@@ -10,14 +8,13 @@ import Nav from '../components/Nav.astro';
 		<BaseHead title="Casita Creativa" description="Casita Creativa" permalink="https://casitacreativa.org" />
 	</head>
 
-	<body class="min-h-full bg-gray-200">
-		<header class="sm:w-3/4 mx-auto bg-white min-h-full">
-			<BlogHeader />
-            <Nav />
+	<body class="min-h-screen bg-blue-100 flex flex-col justify-between">
+		<BlogHeader />
+		<main class="grow md:rounded min-h-full sm:w-3/4 mx-auto bg-white py-6">
 			<slot></slot>
-		</header>
-		<footer class="w-full sm:w-3/4 mx-auto flex flex-col items-center bg-orange-200">
-			<p>Casita Creativa 2023</p>
+		</main>
+		<footer class="md:rounded w-full sm:w-3/4 mx-auto md:mb-6 flex flex-col items-center bg-white">
+			<p class="text-gray-500">Casita Creativa 2023</p>
 			<a href="/admin">Admin Dashboard 🔐</a>
 		</footer>
 	</body>

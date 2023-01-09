@@ -2,14 +2,13 @@
 
 ---
 
-<nav>
+<nav class="relative w-full">
     <svg
     xmlns="<http://www.w3.org/2000/svg>"
     id="menu-button"
-    class="h-6 w-6 m-3 cursor-pointer md:hidden block"
+    class="h-9 w-9 m-3 cursor-pointer md:hidden block stroke-blue-400 z-10"
     fill="none"
     viewBox="0 0 24 24"
-    stroke="currentColor"
     >
         <path
         stroke-linecap="round"
@@ -18,12 +17,35 @@
         d="M4 6h16M4 12h16M4 18h16"
         />
     </svg>
+    <ul id="mobile-menu" class="z-0 opacity-0 flex flex-col transition-opacity transition-transform absolute bg-white w-full">
+        <li class="inline-flex text-center"><a class="p-3 w-full h-full" href="/">Home</a></li>
+        <li class="inline-flex text-center"><a class="p-3 w-full h-full" href="/blogposts">Galeria</a></li>
+        <li class="inline-flex text-center"><a href="/about" class="p-3 w-full h-full">Quienes Somos</a></li>
+        <li class="inline-flex text-center"><a href="/voluntariado" class="p-3 w-full h-full">Voluntariado</a></li>
+        <li class="inline-flex text-center"><a href="#" class="p-3 w-full h-full">Contactanos</a></li>
+    </ul>
     <ul class="hidden md:flex md:justify-around">
         <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a class="p-3 w-full h-full" href="/">Home</a></li>
-        <!-- <a class="w-full h-full" href="/blogposts"><li class="hover:bg-sky-100 inline-block inline-flex grow text-center">Posts</li>p-3 </a> -->
         <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a class="p-3 w-full h-full" href="/blogposts">Galeria</a></li>
         <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a href="/about" class="p-3 w-full h-full">Quienes Somos</a></li>
         <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a href="/voluntariado" class="p-3 w-full h-full">Voluntariado</a></li>
         <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a href="#" class="p-3 w-full h-full">Contactanos</a></li>
     </ul>
 </nav>
+
+<script>
+    const mobileMenuButton = document.querySelector('#menu-button') as SVGElement;
+    const mobileMenu = document.querySelector('#mobile-menu') as HTMLElement;
+
+    mobileMenuButton.onclick = (event) => {
+        console.log('mobile click')
+        // mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('z-0');
+        mobileMenu.classList.toggle('opacity-0');
+        mobileMenu.classList.toggle('-translate-y-full');
+        mobileMenu.classList.toggle('z-10');
+        mobileMenu.classList.toggle('opacity-100');
+        mobileMenu.classList.toggle('translate-y-0');
+        // mobileMenu.classList.toggle('translate-y-0');
+    }
+</script>
