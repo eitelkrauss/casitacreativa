@@ -8,14 +8,27 @@ import BlogHeader from '../components/BlogHeader.astro';
 		<BaseHead title="Casita Creativa" description="Casita Creativa" permalink="https://casitacreativa.org" />
 	</head>
 
-	<body class="min-h-screen bg-blue-100 flex flex-col justify-between">
+	<body class="min-h-screen bg-blue-100 flex flex-col justify-between items-center">
 		<BlogHeader />
-		<main class="grow md:rounded min-h-full sm:w-3/4 mt-16 md:mt-0 md:mx-auto bg-white md:py-6 flex flex-col justify-center">
+		<main id="main" class="grow md:rounded min-h-full sm:w-3/4 md:mt-0 bg-white md:py-6 flex flex-col justify-center">
 			<slot></slot>
 		</main>
-		<footer class="md:rounded w-full sm:w-3/4 mx-auto md:mb-6 flex flex-col items-center bg-white">
+		<footer class="md:rounded w-full sm:w-3/4 md:mb-6 flex flex-col items-center bg-white">
 			<p class="text-gray-500">Casita Creativa 2023</p>
 			<a href="/admin">Admin Dashboard 🔐</a>
 		</footer>
 	</body>
 </html>
+
+
+<script>
+	const isMobile = () => /Android/i.test(navigator.userAgent) || /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+	if(isMobile()){
+		window.onload = () => {
+			const nav = document.querySelector('#nav') as HTMLElement;
+			document.querySelector('#main').classList.add(`mt-[${nav.clientHeight}px]`);
+		}
+	}
+
+</script>

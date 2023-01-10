@@ -2,9 +2,9 @@
 
 ---
 
-<nav class="fixed z-10 top-0 md:relative w-full bg-white flex flex-wrap justify-between items-center">
+<nav id="nav" class="fixed z-10 top-0 md:relative w-full bg-white flex flex-wrap justify-between items-center">
    
-    <button class="border border-2 h-12 w-12 m-3 border-blue-400 rounded float-right relative block md:hidden">
+    <button class="border border-2 h-12 w-12 ml-3 border-blue-400 rounded float-right relative block md:hidden">
         <svg
         xmlns="<http://www.w3.org/2000/svg>"
         id="menu-button"
@@ -23,7 +23,7 @@
     <a href="/" class="md:hidden">
         <img src="logo.jpg" class="w-16 mb-2 inline-block" alt="">
     </a>
-    <div class="invisible w-12 h-12"></div>
+    <div class="invisible w-12 h-12 md:hidden"></div>
     <ul class="hidden opacity-0 md:opacity-100 w-full flex md:flex flex-col md:flex-row md:static md:justify-around">
         <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a class="p-3 w-full h-full" href="/">Home</a></li>
         <li class="hover:bg-sky-100 inline-block inline-flex grow text-center"><a href="/about" class="p-3 w-full h-full">Quiénes Somos</a></li>
@@ -36,19 +36,19 @@
 
 <script>
     const mobileMenuButton = document.querySelector('#menu-button') as SVGElement;
-    const mobileMenu = document.querySelector('nav > ul') as HTMLElement;
+    const menu = document.querySelector('nav > ul') as HTMLElement;
 
 
 
     mobileMenuButton.onclick = (event) => {
-        mobileMenu.classList.toggle('hidden');
+        menu.classList.toggle('hidden');
 
         // mobileMenu.classList.toggle('z-0');
         // mobileMenu.classList.toggle('overflow-hidden');
         // mobileMenu.classList.toggle('-top-full');
         // mobileMenu.classList.toggle('top-12');
         // mobileMenu.classList.toggle('z-10');
-        mobileMenu.classList.toggle('opacity-0');
+        menu.classList.toggle('opacity-0');
         // mobileMenu.classList.toggle('translate-y-0');
         // mobileMenu.classList.toggle('translate-y-0');
     }
