@@ -1,20 +1,13 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-// Component Imports
-import BlogHeader from '../components/BlogHeader.astro';
 import Carousel from '../components/Carousel.astro';
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+let allSlides = await Astro.glob('./slides/*.md');
 ---
 
 
 <DefaultLayout>
-	<Carousel />
+	<p class="md:hidden mb-16 text-center text-sm text-gray-500 font-serif"><em>El deseo más grande del hombre es el de conectar, esta necesidad humana nos recuerda lo que tenemos en común , el amor. No buscamos lógica en un acto de bondad, solo lo sentimos.</em></p>
+	<Carousel slides={allSlides} />
 </DefaultLayout>
-

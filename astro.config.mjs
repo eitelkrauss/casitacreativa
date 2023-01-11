@@ -22,6 +22,29 @@ export default defineConfig({
       // Configure the content collections
       collections: [
         {
+          name: 'slides',
+          label: 'Slides',
+          label_singular: 'Slide',
+          folder: 'src/pages/slides',
+          media_folder: '/public',
+          public_folder: '/',
+          create: true,
+          delete: true,
+          fields: [{
+            name: 'title',
+            widget: 'string',
+            label: 'Slide Title'
+          }, {
+            name: 'description',
+            widget: 'string',
+            label: 'Description'
+          }, {
+            name: 'image',
+            widget: 'image',
+            label: 'Slide Image'
+          }]
+        },
+        {
           name: 'posts',
           label: 'Blog Posts',
           label_singular: 'Blog Post',
