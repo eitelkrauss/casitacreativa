@@ -8,6 +8,6 @@ let allSlides = await Astro.glob('./slides/*.md');
 
 
 <DefaultLayout>
-	<p class="md:hidden mb-16 text-center text-sm text-gray-500 font-serif"><em>El deseo más grande del hombre es el de conectar, esta necesidad humana nos recuerda lo que tenemos en común , el amor. No buscamos lógica en un acto de bondad, solo lo sentimos.</em></p>
+	<p class="md:hidden max-w-[80%] mb-16 text-center text-sm text-gray-400 font-serif"><em>El deseo más grande del hombre es el de conectar, esta necesidad humana nos recuerda lo que tenemos en común , el amor. No buscamos lógica en un acto de bondad, solo lo sentimos.</em></p>
 	<Carousel slides={allSlides} />
 </DefaultLayout>

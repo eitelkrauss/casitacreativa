@@ -8,7 +8,7 @@ const { slide } = Astro.props;
 
 
 <div class="opacity-0 absolute inset-0 w-full h-full bg-gray-500 text-white flex flex-wrap md:flex-nowrap md:items-center transition-all ease-in-out duration-1000 transform translate-x-full slide">
-    <img src={slide.frontmatter.image} class="h-[60%] w-auto md:w-auto md:h-full" alt="">
+    <img src={slide.frontmatter.image} class="h-[60%] md:w-[60%] md:h-auto" alt="">
     <div class="flex flex-col">
         <h2 class="text-2xl">{slide.frontmatter.title}</h2>
         <p class="text-sm">{slide.frontmatter.description}</p>

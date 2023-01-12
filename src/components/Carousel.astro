@@ -11,7 +11,7 @@ export interface Props {
 const { slides } = Astro.props;
 ---
 
-<div id="home-carousel" class="w-screen md:w-full h-[50vh] md:max-w-[80%] md:h-[40vh] mx-auto overflow-hidden relative bg-white">
+<div id="home-carousel" class="shadow-xl w-screen md:w-full h-[50vh] md:max-w-[80%] md:h-[40vh] mx-auto overflow-hidden relative bg-white">
     {slides.map((s) => <CarouselSlide slide={s} />)}
 </div>
 
@@ -44,11 +44,9 @@ const { slides } = Astro.props;
         }, 1000);
     }  
 
-    window.onload = () => {
-        setInterval(() => {
-            nextSlide();
-        }, 3000)
-    }
+    setInterval(() => {
+        nextSlide();
+    }, 3000)
 
 
 </script>
